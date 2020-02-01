@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Item : MonoBehaviour{
+    
+    public Rigidbody2D rb2D;
+    public int pointValue;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public virtual void DoFunction() { }
 }

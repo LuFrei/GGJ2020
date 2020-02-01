@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 
 public class PlayerController : Player
 {
 	
     private void Update(){
         Move(GetMoveVector());
-    }
+	}
 
     Vector2 GetMoveVector(){
         float horizontal = Input.GetAxis("P" + index + "Hoz") * speed * Time.deltaTime;
