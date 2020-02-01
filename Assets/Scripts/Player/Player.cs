@@ -5,6 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
-    public float index; //What player is this?
+    public float index; //What player is this(1-4)?
     public bool team; //0 = blue; 1 = red
 }
