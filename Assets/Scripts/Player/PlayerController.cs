@@ -7,19 +7,21 @@ public class PlayerController : Player
 {
 	
     private void Update(){
-        Move(GetMoveInput());
+        Move(GetMoveVector());
     }
 
-    Vector2 GetMoveInput(){
-        float horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+    Vector2 GetMoveVector(){
+        float horizontal = Input.GetAxis("P" + index + "Hoz") * speed * Time.deltaTime;
+        float vertical = Input.GetAxis("P" + index + "Vert") * speed * Time.deltaTime;
 
         return new Vector2(horizontal, vertical);
     }
 
+
+
 	void Move(Vector2 moveVector) {
 		//transform.Translate(moveVector * Time.deltaTime);
-		transform.position = transform.position + (new Vector3 (moveVector.x,moveVector.y,0) * Time.deltaTime);
+		transform.position += (new Vector3 (moveVector.x,moveVector.y,0) * Time.deltaTime);
 
 		float angle = 0;
 		if (Mathf.Abs(moveVector.x) > Mathf.Abs(moveVector.y)) {
