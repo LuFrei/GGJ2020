@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : Player
 {
-	
 
     private void Update(){
         Move(GetMoveInput());
