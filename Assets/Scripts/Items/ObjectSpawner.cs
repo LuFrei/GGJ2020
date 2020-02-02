@@ -66,36 +66,4 @@ public class ObjectSpawner : MonoBehaviour
 		objects.RemoveAt(0);
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-	[SerializeField] private Building blueBuilding;
-	[SerializeField] private Building redBuilding;
-	public bool blueWins;
-	public bool redWins;
-
-	// Update is called once per frame
-	void Update()
-    {
-        if(blueBuilding.pointValue >= 100){
-			blueWins = true;
-		}
-		if(redBuilding.pointValue >= 100)
-		{
-			redWins = true;
-		}
-    }
-
-
-
 }
