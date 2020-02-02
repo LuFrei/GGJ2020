@@ -7,6 +7,6 @@ public class Glue : Item
     [SerializeField] private GameObject activeGlue;
 
     public override void DoFunction(){
-        Instantiate(activeGlue, transform.position, Quaternion.identity);
+        Instantiate(activeGlue,);
     }
 }

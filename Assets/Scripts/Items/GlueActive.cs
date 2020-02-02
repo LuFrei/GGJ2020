@@ -9,11 +9,19 @@ public class GlueActive : MonoBehaviour{
     /// </summary>
     public float  multiplier;
 
+    private void Start(){
+        //Debug.Log("START HAS PLAYED");
+        StartCoroutine(Countdown(duration));
+    }
+
     private IEnumerator Countdown(float duration){
-        if (duration > 0){
+        while (duration > 0){
             duration -= Time.deltaTime;
+            //Debug.Log($"Glue Timer: {duration}");
             yield return null;
         }
+        //Debug.Log("I should be fucking dead!");
+        Destroy(gameObject);
     }
 
     //Slow player upon entering

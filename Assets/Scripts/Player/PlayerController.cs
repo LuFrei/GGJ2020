@@ -6,7 +6,6 @@ public class PlayerController : Player
 {
 	
     private void Update(){
-        Move(GetMoveVector());
 
 		if (Input.GetAxis($"P{index}A") > 0 && onHand != null){
 			UseItem();
@@ -18,7 +17,11 @@ public class PlayerController : Player
 		}
 	}
 
-    public Vector2 GetMoveVector(){
+	private void FixedUpdate(){
+		Move(GetMoveVector());
+	}
+
+	public Vector2 GetMoveVector(){
         float horizontal = Input.GetAxis("P" + index + "Hoz") * speed * Time.deltaTime;
         float vertical = Input.GetAxis("P" + index + "Vert") * speed * Time.deltaTime;
 
@@ -34,9 +37,10 @@ public class PlayerController : Player
 	}
 
 	void Move(Vector2 moveVector) {
-		//transform.Translate(moveVector * Time.deltaTime);
-		transform.position += (new Vector3 (moveVector.x,moveVector.y,0) * Time.deltaTime);
+		transform.Translate(moveVector * Time.deltaTime);
+		//transform.position += (new Vector3 (moveVector.x,moveVector.y,0) * Time.deltaTime);
 	}
+
 }
 
 
