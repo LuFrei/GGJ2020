@@ -7,10 +7,8 @@ public class PlayerController : Player
 	
     private void Update(){
 
-		if (Input.GetButtonDown($"P{index}Use") && onHand != null){
-			Debug.Log("I'm using Item");
-			UseItem();
-			onHand = null;
+		if (Input.GetButtonDown($"P{index}A")){
+			GetPlayerAction();
 		}
 		
 		if (Input.GetButtonDown($"P{index}B") && onHand != null){
@@ -22,6 +20,19 @@ public class PlayerController : Player
 
 	private void FixedUpdate(){
 		Move(GetMoveVector());
+	}
+
+	//determine whether player will be using or picking up or using item
+	private void GetPlayerAction(){
+		//if there's something in my hand, use it
+		if (onHand != null)
+		{
+			UseItem();
+			onHand = null;
+		}
+		//check if theres anything to be picked up
+		if (nearbyItem != null)
+			PickupItem(nearbyItem);
 	}
 
 	public Vector2 GetMoveVector(){
@@ -50,13 +61,15 @@ public class PlayerController : Player
 		return moveVector;
 	}
 
-	private void OnTriggerStay2D(Collider2D collision)
-	{
-		Debug.Log($"the Player is in the Trigger of {collision.gameObject.name}");
-		if (collision.gameObject.tag == "Item" && Input.GetButtonDown($"P{index}A") && onHand == null)
-		{
-			Debug.Log("I SHOULD pick up this item");
-			PickupItem(collision.gameObject);
+	private void OnTriggerEnter2D(Collider2D collision){
+		if (collision.gameObject.tag == "Item"){
+			nearbyItem = collision.gameObject;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision){
+		if (collision.gameObject == nearbyItem){
+			nearbyItem = null;
 		}
 	}
 }

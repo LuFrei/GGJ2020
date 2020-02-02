@@ -8,7 +8,9 @@ public class Player : MonoBehaviour
     public float index; //What player is this(1-4)?
     public bool team; //0 = blue; 1 = red
     public GameObject onHand;
+    [SerializeField] protected GameObject nearbyItem;
     public Vector2 aim;
+
 
     [SerializeField] private Transform itemHold;
 
@@ -37,10 +39,12 @@ public class Player : MonoBehaviour
     }
 
     protected void PickupItem(GameObject item){
-        Debug.Log("PickupItem()");
+        
+        //check for false positive
+        if (item == null)
+            return;
 
         onHand = item;
-
 
         item.transform.parent = itemHold;
         item.transform.position = itemHold.position;
