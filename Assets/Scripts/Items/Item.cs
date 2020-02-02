@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour{
     public Rigidbody2D rb2D;
     public int pointValue;
-    public int type; //0 = hammer; 1 = glue; 2 = screws;
+    public int type;
 
     private void Start(){
         rb2D = GetComponent<Rigidbody2D>();

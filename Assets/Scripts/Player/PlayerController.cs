@@ -7,12 +7,13 @@ public class PlayerController : Player
 	
     private void Update(){
 
-		if (Input.GetAxis($"P{index}A") > 0 && onHand != null){
+		if (Input.GetButtonDown($"P{index}Use") && onHand != null){
+			Debug.Log("I'm using Item");
 			UseItem();
 			onHand = null;
 		}
 		
-		if (Input.GetAxis($"P{index}B") > 0 && onHand != null){
+		if (Input.GetButtonDown($"P{index}B") && onHand != null){
 			DropItem(GetAimVector());
 		}
 
@@ -49,12 +50,13 @@ public class PlayerController : Player
 		return moveVector;
 	}
 
-
-	private void OnTriggerStay2D(Collider2D collision){
+	private void OnTriggerStay2D(Collider2D collision)
+	{
 		Debug.Log($"the Player is in the Trigger of {collision.gameObject.name}");
-		if(collision.tag == "Item" && Input.GetAxis($"P{index}B") > 0){
+		if (collision.gameObject.tag == "Item" && Input.GetButtonDown($"P{index}A") && onHand == null)
+		{
 			Debug.Log("I SHOULD pick up this item");
-			PickupItem(collision.GetComponent<Item>());
+			PickupItem(collision.gameObject);
 		}
 	}
 }
