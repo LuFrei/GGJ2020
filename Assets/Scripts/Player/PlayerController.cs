@@ -8,8 +8,14 @@ public class PlayerController : Player
     private void Update(){
         Move(GetMoveVector());
 
-
-		Debug.Log($"Aim Angle: {GetAimAngle()}");
+		if (Input.GetAxis($"P{index}A") > 0 && onHand != null){
+			UseItem();
+			onHand = null;
+		}
+		
+		if (Input.GetAxis($"P{index}B") > 0 && onHand != null){
+			DropItem(GetAimAngle());
+		}
 	}
 
     public Vector2 GetMoveVector(){
@@ -22,7 +28,7 @@ public class PlayerController : Player
 	public Vector2 GetAimAngle()
 	{
 		float horizontal = Input.GetAxis("P" + index + "AimHoz");
-		float vertical = Input.GetAxis("P" + index + "AimVert");
+		float vertical = Input.GetAxis("P" + index + "AimVert") * -1; //for some reason this is flipped on the right stick. -1 to cancel it.
 
 		return new Vector2(horizontal, vertical);
 	}
