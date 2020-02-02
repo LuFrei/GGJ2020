@@ -34,6 +34,7 @@ public class MenuScript : MonoBehaviour
 		switch (index) {
 			case 0:
 				Invoke("Transition", 0.25f);
+				Debug.Log("ToScene!");
 				break;
 
 			case 1:
@@ -42,6 +43,7 @@ public class MenuScript : MonoBehaviour
 				break;
 			case 2:
 				Invoke("Quit", 0.2f);
+				Debug.Log("Quit");
 				break;
 
 		}
@@ -53,7 +55,7 @@ public class MenuScript : MonoBehaviour
 		if (!isCreds && !menuSwitch) {
 			if ((int)Input.GetAxis("P1Vert") != 0) {
 				buttons[index].GetComponent<Image>().sprite = norm[index];
-				index += (int)Input.GetAxis("P1Vert");
+				index -= (int)Input.GetAxis("P1Vert");
 				if (index > 2) { index = 0; }
 				if (index < 0) { index = 2; }
 				buttons[index].GetComponent<Image>().sprite = select[index];
