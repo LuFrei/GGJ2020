@@ -34,8 +34,8 @@ public class PlayerAnimation : MonoBehaviour
 
 
 		//If the player is "Aiming" use Aim values
-		if (pControl.GetAimAngle() != Vector2.zero) {
-			lookVector = pControl.GetAimAngle();
+		if (pControl.GetAimVector() != Vector2.zero) {
+			lookVector = pControl.GetAimVector();
 
 		} else {
 			lookVector = pControl.GetMoveVector();
