@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6756460900801159190}
   m_Layer: 0
   m_Name: Hammer
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2D: {fileID: 0}
   pointValue: 10
+  type: 0
+  activeHammer: {fileID: 3784992563735292436, guid: 6803ecbf0e7c26848839c9352d2e947c,
+    type: 3}
 --- !u!212 &-7426406813914360250
 SpriteRenderer:
   m_ObjectHideFlags: 0

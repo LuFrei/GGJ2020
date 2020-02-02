@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Screws : Item
 {
+    [SerializeField] private GameObject activeScrews;
+
     public override void DoFunction(Vector2 aim)
     {
-        Debug.Log("Screw function called from Item!!");
+        Instantiate(activeScrews, gameObject.transform.position, Quaternion.identity);
     }
 }

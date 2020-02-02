@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3184985742556646516}
   m_Layer: 0
   m_Name: Screws
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   pointValue: 5
   type: 2
+  activeScrews: {fileID: 6830319268012331190, guid: 45cd590cd15453d4680bbdd8ddff188f,
+    type: 3}
 --- !u!61 &2575199042024347262
 BoxCollider2D:
   m_ObjectHideFlags: 0

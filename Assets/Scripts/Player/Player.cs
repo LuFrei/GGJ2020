@@ -19,18 +19,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    protected void DropItem(Vector2 throwVector){
-        Debug.Log("I'm dropping the item");
-        //Spawn item in world
-        GameObject item = onHand.gameObject;
-        //Remove item from hand
-        item.transform.SetParent(null);
-        //Get rid of item in inventory
-        onHand = null;
-        //"Throw" item away
-        item.GetComponent<Rigidbody2D>().AddForce(throwVector);
-        //Add "spin" to item
-        item.GetComponent<Rigidbody2D>().AddTorque(2, ForceMode2D.Impulse);
+    public void DropItem(Vector2 throwVector){
+        if (onHand != null)
+        {
+            Debug.Log("I'm dropping the item");
+            //Spawn item in world
+            GameObject item = onHand.gameObject;
+            //Remove item from hand
+            item.transform.SetParent(null);
+            //Get rid of item in inventory
+            onHand = null;
+            //"Throw" item away
+            item.GetComponent<Rigidbody2D>().AddForce(throwVector);
+            //Add "spin" to item
+            item.GetComponent<Rigidbody2D>().AddTorque(2, ForceMode2D.Impulse);
+        }
     }
 
     protected void PickupItem(GameObject item){
