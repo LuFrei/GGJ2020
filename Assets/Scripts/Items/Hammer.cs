@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hammer : Item
 {
-    public override void DoFunction(){
+    public override void DoFunction(Vector2 aim){
         Debug.Log("Hammer function called from Item!!");
     }
 }

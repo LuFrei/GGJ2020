@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Screws : Item
 {
-    public override void DoFunction()
+    public override void DoFunction(Vector2 aim)
     {
         Debug.Log("Screw function called from Item!!");
     }
