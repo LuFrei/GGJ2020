@@ -24,13 +24,8 @@ public class HammerActive : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.tag == "Player"){
+        if(collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<Player>().onHand){
             collision.gameObject.GetComponent<Player>().DropItem(Vector2.zero);
-            Destroy(gameObject);
-        }
-        if(collision.gameObject.tag == "Building")
-        {
-            collision.gameObject.GetComponent<Building>().pointValue -= 5;
             Destroy(gameObject);
         }
         Destroy(gameObject);

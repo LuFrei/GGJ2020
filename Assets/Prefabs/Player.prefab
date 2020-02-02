@@ -268,10 +268,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b947bea09753af49b7ca37f998b1912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 3
   index: 1
   team: 0
-  onHand: {fileID: 6616773801638573979, guid: 74cbfaf5e2add1743bded893295b3850, type: 3}
+  onHand: {fileID: 0}
+  aim: {x: 0, y: 0}
+  itemHold: {fileID: 7440266756735727853}
 --- !u!61 &1148108108
 BoxCollider2D:
   m_ObjectHideFlags: 0

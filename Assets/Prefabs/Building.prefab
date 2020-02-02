@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7458895382469883258}
   - component: {fileID: 7458895382469883257}
   - component: {fileID: 7458895382469883252}
+  - component: {fileID: 15312784}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -128,3 +129,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &15312784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458895382469883256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff99fd03bd6b894aa382ca32b2f1958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointValue: 0
