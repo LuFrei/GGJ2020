@@ -22,8 +22,8 @@ public class PlayerController : Player
 	}
 
 	public Vector2 GetMoveVector(){
-        float horizontal = Input.GetAxis("P" + index + "Hoz") * speed * Time.deltaTime;
-        float vertical = Input.GetAxis("P" + index + "Vert") * speed * Time.deltaTime;
+        float horizontal = Input.GetAxis("P" + index + "Hoz");
+        float vertical = Input.GetAxis("P" + index + "Vert");
 
         return new Vector2(horizontal, vertical);
     }
@@ -37,10 +37,16 @@ public class PlayerController : Player
 	}
 
 	void Move(Vector2 moveVector) {
-		transform.Translate(moveVector * Time.deltaTime);
+		transform.Translate(moveVector * speed * Time.deltaTime);
 		//transform.position += (new Vector3 (moveVector.x,moveVector.y,0) * Time.deltaTime);
 	}
 
+	public Vector2 Aim(Vector2 moveVector, Vector2 lookVector){
+		if(lookVector != Vector2.zero){
+			return lookVector;
+		}
+		return moveVector;
+	}
 }
 
 
