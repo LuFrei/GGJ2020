@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Building : MonoBehaviour {
+	public Sprite[] buildingSteps;
+	SpriteRenderer render;
 	public int pointValue; //from 0-100
-	Animator anim;
 
 	private void Start() {
-		anim = gameObject.GetComponent<Animator>();
-
+		render = GetComponent<SpriteRenderer>();
 	}
 
 	private void Update(){
-		anim.SetFloat("Progress", pointValue / 1000);
+		render.sprite = buildingSteps[pointValue / 10];
 	}
 
 

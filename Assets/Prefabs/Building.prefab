@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7458895382469883259}
   - component: {fileID: 7458895382469883258}
   - component: {fileID: 7458895382469883257}
-  - component: {fileID: 7458895382469883252}
   - component: {fileID: 15312784}
   m_Layer: 0
   m_Name: Building
@@ -110,25 +109,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.19}
   m_EdgeRadius: 0
---- !u!95 &7458895382469883252
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7458895382469883256}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8724c40e50ff34044bb9e558ca9e336f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &15312784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,4 +121,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff99fd03bd6b894aa382ca32b2f1958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingSteps:
+  - {fileID: 21300000, guid: 48d7fd9a0400f764ea8a640e304de511, type: 3}
+  - {fileID: 21300000, guid: 3e496b3c61ad90b41bdd9cb2fbaf1bd8, type: 3}
+  - {fileID: 21300000, guid: ec69ca00a821a6342a4003d4a0982f33, type: 3}
+  - {fileID: 21300000, guid: 8cfc6c49b87e60644b658e0db001ddd7, type: 3}
+  - {fileID: 21300000, guid: 15eec8babd948584a9adb70887ee5883, type: 3}
+  - {fileID: 21300000, guid: dd27d04e501de9a4c92efbe467d33f9c, type: 3}
+  - {fileID: 21300000, guid: 1dda25e62a116834eb455f7112d022cf, type: 3}
+  - {fileID: 21300000, guid: 5d13f38b4ba07b74c934f8531857a5d3, type: 3}
+  - {fileID: 21300000, guid: 5737ce44bf2ca3648b2ebb17e82ab6d5, type: 3}
+  - {fileID: 21300000, guid: 31469b6a7e889874a94e60bfb7c97caa, type: 3}
+  - {fileID: 21300000, guid: 0444a78ae6b38be46b38cb75376f1220, type: 3}
   pointValue: 0

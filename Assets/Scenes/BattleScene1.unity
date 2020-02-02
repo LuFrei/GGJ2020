@@ -2050,8 +2050,6 @@ MonoBehaviour:
   blueWinBanner: {fileID: 1794275215}
   redWinBanner: {fileID: 542122953}
   gameState: 0
-  blueWins: 0
-  redWins: 0
 --- !u!4 &1331217437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7409778933292178617, guid: 779ef2c3277b9f743b401db6947c5fa1,
@@ -2065,6 +2063,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 641336253}
     m_Modifications:
+    - target: {fileID: 15312784, guid: 39926e452809fe54bbc5d197d188751f, type: 3}
+      propertyPath: buildingSteps.Array.size
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7458895382469883256, guid: 39926e452809fe54bbc5d197d188751f,
         type: 3}
       propertyPath: m_Name
