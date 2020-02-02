@@ -10,6 +10,10 @@ public class Building : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator>();
 
 	}
-	//anim.SetFloat("Progress",pointValue/1000);
+
+	private void Update(){
+		anim.SetFloat("Progress", pointValue / 1000);
+	}
+
 
 }

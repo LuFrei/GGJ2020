@@ -11,9 +11,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject blueWinBanner;
 	[SerializeField] private GameObject redWinBanner;
 
-	private int gameState; //0 = Active; 1 = End 
-	public bool blueWins;
-	public bool redWins;
+	[SerializeField] private int gameState; //0 = Active; 1 = End 
 
 	private float endWait = 2;
 
@@ -27,8 +25,11 @@ public class GameManager : MonoBehaviour
 					EndGame();
 				return;
 			case 1:
-				if (Input.GetButtonDown("P1A"))
+				Debug.Log("On end state");
+				if (Input.GetButtonDown("P1A")){
+					Debug.Log("Scene shoudl restart to main menu, now");
 					SceneManager.LoadScene(0);
+				}
 				return;
 		}
 		
@@ -38,8 +39,6 @@ public class GameManager : MonoBehaviour
 
 
 	void EndGame(){
-		//pause game
-		Time.timeScale = 0;
 		//check and display winner
 		if(blueBuilding.pointValue >= 100){
 			blueWinBanner.SetActive(true);
@@ -52,11 +51,17 @@ public class GameManager : MonoBehaviour
 	}
 
 	IEnumerator countdown(float timer){
-		while (timer > 0){
-			timer -= Time.deltaTime;
+		while (Time.timeScale > 0){
+			if (Time.timeScale <= 0)
+				continue;
+			Time.timeScale -= Time.deltaTime * 0.5f;
+			Debug.Log($"Time slowing by: {Time.timeScale}");
 			yield return null;
 		}
+		Time.timeScale = 0;
+		Debug.Log("Im out!");
 		gameState = 1;
+
 	}
 
 	//Restart game
