@@ -51,10 +51,8 @@ public class GameManager : MonoBehaviour
 	}
 
 	IEnumerator countdown(float timer){
-		while (Time.timeScale > 0){
-			if (Time.timeScale <= 0)
-				continue;
-			Time.timeScale -= Time.deltaTime * 0.5f;
+		while (Time.timeScale > 0.0001){
+			Time.timeScale -= Time.deltaTime * 0.2f;
 			Debug.Log($"Time slowing by: {Time.timeScale}");
 			yield return null;
 		}
