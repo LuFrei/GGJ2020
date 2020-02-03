@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 	IEnumerator countdown(float timer){
 		while (Time.timeScale > 0.0001){
 			Time.timeScale -= Time.deltaTime * 0.2f;
-			Debug.Log($"Time slowing by: {Time.timeScale}");
+			Debug.Log($"Time slowing by: {Time.timeScale}"); 
 			yield return null;
 		}
 		Time.timeScale = 0;
@@ -64,6 +64,6 @@ public class GameManager : MonoBehaviour
 
 	//Restart game
 	void Restart(){
-		SceneManager.LoadScene(0);
+		Application.Quit();
 	}
 }
